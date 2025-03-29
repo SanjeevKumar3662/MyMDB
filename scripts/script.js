@@ -1,15 +1,7 @@
-require("dotenv").config();
+// require("dotenv").config();
 
-dotenv.config();
+// dotenv.config();
 // console.log(`api key is here -> ${process.env.API_KEY}`);
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization: `Bearer ${process.env.API_KEY}`,
-  },
-};
-console.log(options.headers.Authorization);
 
 const makeMoviePoster = (type, data) => {
   const div = document.createElement("div");
@@ -52,16 +44,20 @@ const addMovieToDOM = (movie) => {
 };
 
 const getPopularMovies = async () => {
+  // const data = await fetch(
+  //   "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+  //   options
+  // );
+  // const data = await fetch("http://localhost:3000/popularMovies");
   const data = await fetch(
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-    options
+    "https://first-backend-eight.vercel.app/popularMovies"
   );
 
   console.log("new async code");
 
   const res = await data.json();
 
-  // console.log(res.results[0]);
+  console.log(res.results[0]);
   const arrMovie = res.results;
 
   arrMovie.forEach((movie) => {
