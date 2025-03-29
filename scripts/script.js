@@ -167,7 +167,7 @@ const getTvDetails = async () => {
 //page router
 const init = () => {
   switch (window.location.pathname) {
-    case "/index.html":
+    case "/MyMDB/index.html":
       getPopularMovies();
       break;
 
