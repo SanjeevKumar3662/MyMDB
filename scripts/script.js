@@ -167,6 +167,10 @@ const getTvDetails = async () => {
 //page router
 const init = () => {
   switch (window.location.pathname) {
+    case "/":
+      getPopularMovies();
+      break;
+
     case "/index.html":
       getPopularMovies();
       break;
