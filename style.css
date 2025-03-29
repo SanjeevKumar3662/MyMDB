@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: beige;
+}
+
+h1 {
+  justify-self: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: beige;
+  font-size: 20px;
+  background-color: rgb(75, 119, 119);
+}
+
+.logo {
+  padding: 0 10px;
+}
+.right-header {
+  display: flex;
+  padding: 0px 10px;
+  gap: 20px;
+}
+
+main {
+  /* border: solid; */
+  /* width: 1300px; */
+  margin: 0px auto;
+  background-color: rgb(96, 23, 12);
+}
+
+.container {
+  display: flex;
+  margin: 0px auto;
+  width: 1200px;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* border: solid; */
+}
+
+.card {
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  background-color: rgba(82, 96, 172, 0.475);
+  width: 285px;
+  height: 450px;
+  padding: 10px 0;
+  color: white;
+}
+
+.poster {
+  width: 250px;
+  height: 390px;
+  justify-self: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.movie-info {
+  /* border: solid; */
+  padding: 5px 15px;
+}
+
+/* movie details */
+.details-poster {
+  width: 400px;
+  height: 570px;
+  justify-self: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.movie-Backdrop {
+  height: 100dvh;
+  max-width: 100%;
+  justify-self: center;
+  background-position: center;
+  background-size: cover;
+  /* opacity: 0.5; */
+}
+
+.flex-container {
+  color: white;
+  display: flex;
+  margin: 0px auto;
+  padding: 4rem 1rem;
+  /* flex-wrap: wrap; */
+  gap: 1rem;
+}
+
+.back-btn {
+  border: none;
+  color: white;
+  background-color: rgb(95, 37, 37);
+  margin: 20px;
+  border-radius: 15px;
+  padding: 1rem 3rem;
+}
+
+.details-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 18px;
+  border: solid rgba(255, 255, 255, 0.281);
+  border-radius: 1rem;
+  width: 60%;
+  padding: 2rem;
+  margin-left: 30rem;
+}
+
+.details-right h2 {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.details-right div,
+.details-right a {
+  margin: 0.5rem;
+}
+
+.details-right a {
+  text-align: center;
+  width: 200px;
+  border: solid white;
+  border-radius: 10px;
+  padding: 1rem;
+}
