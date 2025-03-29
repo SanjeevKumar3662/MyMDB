@@ -1,5 +1,7 @@
 require("dotenv").config();
-console.log(`api key is here -> ${process.env.API_KEY}`);
+
+dotenv.config();
+// console.log(`api key is here -> ${process.env.API_KEY}`);
 const options = {
   method: "GET",
   headers: {
@@ -7,6 +9,7 @@ const options = {
     Authorization: `Bearer ${process.env.API_KEY}`,
   },
 };
+console.log(options.headers.Authorization);
 
 const makeMoviePoster = (type, data) => {
   const div = document.createElement("div");
