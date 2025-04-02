@@ -116,7 +116,7 @@ const getMovieDetails = async () => {
   console.log("id =>" + id);
 
   // const request = await fetch(`http://localhost:3000/movie_details/${id}`);
-  const request = await fetch(`http://first-backend-eight.vercel.app/movie_details/${id}`);
+  const request = await fetch(`https://first-backend-eight.vercel.app/movie_details/${id}`);
 
   const movieID = params.get("id");
 
@@ -129,7 +129,7 @@ const getMovieDetails = async () => {
 //tv shows
 const getPopularTvShows = async () => {
   // const data = await fetch("http://localhost:3000/popular_tv");
-  const data = await fetch("http://first-backend-eight.vercel.app/popular_tv");
+  const data = await fetch("https://first-backend-eight.vercel.app/popular_tv");
 
   console.log("new async code");
 
@@ -149,7 +149,7 @@ const getTvDetails = async () => {
   console.log("TV details => " + id);
 
   // const request = await fetch(`http://localhost:3000/tv_details/${id}`);
-  const request = await fetch(`http://first-backend-eight.vercel.app/tv_details/${id}`);
+  const request = await fetch(`https://first-backend-eight.vercel.app/tv_details/${id}`);
 
   const res = await request.json();
   console.log("new async code", res);
