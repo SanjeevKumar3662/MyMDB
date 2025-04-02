@@ -44,13 +44,8 @@ const addMovieToDOM = (movie) => {
 };
 
 const getPopularMovies = async () => {
-  // const data = await fetch(
-  //   "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-  //   options
-  // );
-  // const data = await fetch("http://localhost:3000/popularMovies");
   const data = await fetch(
-    "https://first-backend-eight.vercel.app/popularMovies"
+    "https://first-backend-eight.vercel.app/popular_movies"
   );
 
   console.log("new async code");
@@ -117,12 +112,13 @@ const addMovieDetailsToDOM = (type, movie) => {
 
 const getMovieDetails = async () => {
   const params = new URLSearchParams(location.search);
-  console.log(params.get("id"));
+  const id = params.get("id");
+  console.log("id =>" + id);
 
-  const request = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.get("id")}?language=en-US`,
-    options
-  );
+  // const request = await fetch(`http://localhost:3000/movie_details/${id}`);
+  const request = await fetch(`http://first-backend-eight.vercel.app/movie_details/${id}`);
+
+  const movieID = params.get("id");
 
   const res = await request.json();
   console.log("new async code", res);
@@ -132,10 +128,8 @@ const getMovieDetails = async () => {
 
 //tv shows
 const getPopularTvShows = async () => {
-  const data = await fetch(
-    "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
-    options
-  );
+  // const data = await fetch("http://localhost:3000/popular_tv");
+  const data = await fetch("http://first-backend-eight.vercel.app/popular_tv");
 
   console.log("new async code");
 
@@ -151,12 +145,11 @@ const getPopularTvShows = async () => {
 
 const getTvDetails = async () => {
   const params = new URLSearchParams(location.search);
-  console.log(params.get("id"));
+  const id = params.get("id");
+  console.log("TV details => " + id);
 
-  const request = await fetch(
-    `https://api.themoviedb.org/3/tv/${params.get("id")}?language=en-US`,
-    options
-  );
+  // const request = await fetch(`http://localhost:3000/tv_details/${id}`);
+  const request = await fetch(`http://first-backend-eight.vercel.app/tv_details/${id}`);
 
   const res = await request.json();
   console.log("new async code", res);
