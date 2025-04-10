@@ -66,7 +66,7 @@ const addMovieDetailsToDOM = (type, movie) => {
   div.classList.add("details-poster");
 
   div.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${movie.poster_path})`;
-  div.style.position = "absolute";
+  // div.style.position = "absolute";
 
   const poster = document.querySelector(".details-poster");
   poster.replaceWith(div);
@@ -74,7 +74,7 @@ const addMovieDetailsToDOM = (type, movie) => {
   //movie-Backdrop
   const movieBackdrop = document.querySelector(".movie-Backdrop");
   movieBackdrop.style.background = `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://image.tmdb.org/t/p/original${movie.backdrop_path}) no-repeat center/cover`;
-  // movieBackdrop.style.backgroundAttachment = "fixed";
+  movieBackdrop.style.backgroundAttachment = "fixed";
   // movieBackdrop.style.height = "100vh";
   // movieBackdrop.style.width = "100vw";
 
