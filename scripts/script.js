@@ -39,7 +39,7 @@ const makeMoviePoster = (type, data) => {
 };
 
 const addMovieToDOM = (movie) => {
-  const container = document.querySelector(".home-container");
+  const container = document.querySelector("#home-container");
   container.appendChild(movie);
 };
 
@@ -74,6 +74,9 @@ const addMovieDetailsToDOM = (type, movie) => {
   //movie-Backdrop
   const movieBackdrop = document.querySelector(".movie-Backdrop");
   movieBackdrop.style.background = `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://image.tmdb.org/t/p/original${movie.backdrop_path}) no-repeat center/cover`;
+  // movieBackdrop.style.backgroundAttachment = "fixed";
+  // movieBackdrop.style.height = "100vh";
+  // movieBackdrop.style.width = "100vw";
 
   //description
   const detailsRight = document.querySelector(".details-right");
