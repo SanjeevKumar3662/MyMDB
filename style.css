@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: content-box;
 }
-body{
-  /* height: 100vh; */
-}
 
 a {
   text-decoration: none;
@@ -82,7 +79,7 @@ main {
   color: white;
   margin: 0px auto;
   gap: 1rem;
-  padding: 1rem;
+  padding: 10px;
   /* padding-bottom: 20rem; */
 }
 
