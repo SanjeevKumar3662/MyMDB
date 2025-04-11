@@ -76,11 +76,11 @@ main {
 /* movie details */
 .flex-container {
   display: flex;
+  justify-content: space-evenly;
   color: white;
   margin: 0px auto;
   gap: 1rem;
-  padding: 10px;
-  /* padding-bottom: 20rem; */
+  padding: 20px;
 }
 
 .movie-Backdrop {
@@ -160,7 +160,7 @@ main {
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1024px) {
   .container {
     width: 600px;
   }
@@ -168,6 +168,7 @@ main {
   .flex-container {
     flex-direction: column;
     gap: 20px;
+    padding: 30px;
   }
 
   .details-poster {
@@ -185,5 +186,9 @@ main {
 @media (max-width: 650px) {
   .container {
     width: 300px;
+  }
+  
+  .flex-container{
+    padding: 10px;
   }
 }
