@@ -33,7 +33,7 @@ h1 {
 }
 
 main {
-  width: 100vw;
+  /* width: 100vw; */
   /* border: solid; */
   /* margin: 0px auto; */
   background-color: rgb(96, 23, 12);
