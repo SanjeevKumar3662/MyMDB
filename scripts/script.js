@@ -3,6 +3,7 @@
 // dotenv.config();
 // console.log(`api key is here -> ${process.env.API_KEY}`);
 
+//Hellping functions
 const makePoster = (type, data) => {
   const div = document.createElement("div");
   div.classList.add("card");
@@ -38,29 +39,12 @@ const makePoster = (type, data) => {
   // console.log(div);
 };
 
-const addMovieToDOM = (movie) => {
+const addMediaToDOM = (movie) => {
   const container = document.querySelector("#home-container");
   container.appendChild(movie);
 };
 
-const getPopularMovies = async () => {
-  const data = await fetch(
-    "https://first-backend-eight.vercel.app/popular_movies"
-  );
-
-  // console.log("new async code");
-
-  const res = await data.json();
-
-  console.log(res.results[0]);
-  const arrMovie = res.results;
-
-  arrMovie.forEach((movie) => {
-    addMovieToDOM(makePoster("movie", movie));
-  });
-};
-
-const addMovieDetailsToDOM = (type, movie) => {
+const addMediaDetailsToDOM = (type, movie) => {
   //poster
   const div = document.createElement("div");
   div.classList.add("details-poster");
@@ -113,19 +97,39 @@ const addMovieDetailsToDOM = (type, movie) => {
   });
 };
 
+//Movies
+const getPopularMovies = async () => {
+  const data = await fetch(
+    "https://first-backend-eight.vercel.app/popular_movies"
+  );
+
+  // console.log("new async code");
+
+  const res = await data.json();
+
+  console.log(res.results[0]);
+  const arrMovie = res.results;
+
+  arrMovie.forEach((movie) => {
+    addMediaToDOM(makePoster("movie", movie));
+  });
+};
+
 const getMovieDetails = async () => {
   const params = new URLSearchParams(location.search);
   const id = params.get("id");
   console.log("id =>" + id);
 
   // const request = await fetch(`http://localhost:3000/movie_details/${id}`);
-  const request = await fetch(`https://first-backend-eight.vercel.app/movie_details/${id}`);
+  const request = await fetch(
+    `https://first-backend-eight.vercel.app/movie_details/${id}`
+  );
 
   const movieID = params.get("id");
 
   const res = await request.json();
   console.log("new async code", res);
-  addMovieDetailsToDOM("movie", res);
+  addMediaDetailsToDOM("movie", res);
   // .catch((err) => console.error(err));
 };
 
@@ -134,15 +138,16 @@ const getPopularTvShows = async () => {
   // const data = await fetch("http://localhost:3000/popular_tv");
   const data = await fetch("https://first-backend-eight.vercel.app/popular_tv");
 
-  console.log("new async code");
+  console.log("new++ async code");
 
   const res = await data.json();
 
   console.log(res.results[0]);
+  // console.log(res);
   const arrTv = res.results;
 
   arrTv.forEach((tv) => {
-    addMovieToDOM(makePoster("tv", tv));
+    addMediaToDOM(makePoster("tv", tv));
   });
 };
 
@@ -152,15 +157,17 @@ const getTvDetails = async () => {
   console.log("TV details => " + id);
 
   // const request = await fetch(`http://localhost:3000/tv_details/${id}`);
-  const request = await fetch(`https://first-backend-eight.vercel.app/tv_details/${id}`);
+  const request = await fetch(
+    `https://first-backend-eight.vercel.app/tv_details/${id}`
+  );
 
   const res = await request.json();
   console.log("new async code", res);
-  addMovieDetailsToDOM("tv", res);
+  addMediaDetailsToDOM("tv", res);
   // .catch((err) => console.error(err));
 };
 
-//page router
+//Page Router
 const init = () => {
   switch (window.location.pathname) {
     case "/":
