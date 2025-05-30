@@ -3,22 +3,22 @@
 // dotenv.config();
 // console.log(`api key is here -> ${process.env.API_KEY}`);
 
-const makeMoviePoster = (type, data) => {
+const makePoster = (type, data) => {
   const div = document.createElement("div");
   div.classList.add("card");
 
-  const movieLink = document.createElement("a");
-  movieLink.classList.add("link");
+  const link = document.createElement("a");
+  link.classList.add("link");
 
   if (type === "movie") {
-    movieLink.href = `movieDetails.html?id=${data.id}`;
+    link.href = `movieDetails.html?id=${data.id}`;
   } else {
-    movieLink.href = `tvDetails.html?id=${data.id}`;
+    link.href = `tvDetails.html?id=${data.id}`;
   }
   const posterDiv = document.createElement("div");
   posterDiv.classList.add("poster");
-  movieLink.appendChild(posterDiv);
-  div.appendChild(movieLink);
+  link.appendChild(posterDiv);
+  div.appendChild(link);
 
   const movieInfo = document.createElement("div");
   movieInfo.classList.add("movie-info");
@@ -48,7 +48,7 @@ const getPopularMovies = async () => {
     "https://first-backend-eight.vercel.app/popular_movies"
   );
 
-  console.log("new async code");
+  // console.log("new async code");
 
   const res = await data.json();
 
@@ -56,7 +56,7 @@ const getPopularMovies = async () => {
   const arrMovie = res.results;
 
   arrMovie.forEach((movie) => {
-    addMovieToDOM(makeMoviePoster("movie", movie));
+    addMovieToDOM(makePoster("movie", movie));
   });
 };
 
@@ -142,7 +142,7 @@ const getPopularTvShows = async () => {
   const arrTv = res.results;
 
   arrTv.forEach((tv) => {
-    addMovieToDOM(makeMoviePoster("tv", tv));
+    addMovieToDOM(makePoster("tv", tv));
   });
 };
 
