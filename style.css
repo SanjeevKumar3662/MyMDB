@@ -32,7 +32,7 @@ h1 {
   gap: 20px;
 }
 
-main {
+body {
   /* width: 100vw; */
   /* border: solid; */
   /* margin: 0px auto; */
@@ -72,6 +72,21 @@ main {
   /* border: solid; */
   padding: 5px 15px;
 }
+
+.moreMedia{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: lightblue;
+  width: 0 auto;
+  height: 40px;
+  margin: 10px 40px;
+  font-size: large;
+  font-weight: 700;
+}
+
 
 /* movie details */
 .flex-container {
